@@ -18,7 +18,11 @@ func main() {
 	p2 := Person{"Mary", 25}
 
 	mui := memui.New()
-	mui.Register(p1, p2)
 
-	fmt.Println(mui.ListValues("main.Person"))
+	err := mui.Register(&p1, &p2)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	fmt.Println(mui.ListValues("*main.Person"))
 }
