@@ -15,4 +15,10 @@ func (mui *MemUI) handleIndex(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("No objects registered"))
 		return
 	}
+
+	w.Write([]byte("<html><body><ul>"))
+	for objType := range mui.memObjects {
+		w.Write([]byte("<li>" + objType + "</li>"))
+	}
+	w.Write([]byte("</ul></body></html>"))
 }
