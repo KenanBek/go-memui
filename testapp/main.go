@@ -7,24 +7,31 @@ import (
 	"github.com/KenanBek/go-memui"
 )
 
-type Person struct {
+type Department struct {
 	Name string
-	Age  int
+}
+
+type Person struct {
+	Name       string
+	Age        int
+	Department *Department
 }
 
 func main() {
 	fmt.Println("Hello, World!")
 
-	// p1 := Person{"John", 30}
-	// p2 := Person{"Mary", 25}
+	d1 := Department{Name: "IT"}
+	d2 := Department{Name: "HR"}
+
+	p1 := Person{"John", 30, &d1}
+	p2 := Person{"Mary", 25, &d2}
 
 	mui := memui.New()
 
-	// err := mui.Register(&p1, &p2)
-	// if err != nil {
-	// 	fmt.Println(err)
-	// }
+	err := mui.Register(&p1, &p2, &d1, &d2)
+	if err != nil {
+		fmt.Println(err)
+	}
 
-	// fmt.Println(mui.ListValues("*main.Person"))
 	log.Fatalln(mui.ServerHTTP())
 }
