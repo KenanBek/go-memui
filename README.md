@@ -14,6 +14,8 @@ The whole development process is available as a step-by-step tutorial series. Yo
 
 ## 📜 How to use?
 
+![go-memui demo](docs/demo.gif "JSON API for in-memory objects. An experimental Go-lang project. ")
+
 ```go
 func main() {
 	fmt.Println("Hello, World!")
