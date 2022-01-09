@@ -16,7 +16,36 @@ The whole development process is available as a step-by-step tutorial series. Yo
 
 ![go-memui demo](docs/demo.gif "JSON API for in-memory objects. An experimental Go-lang project. ")
 
+#### How to install?
+
+Use go get to install the latest version of the package:
+
+```sh
+go get github.com/kenanbek/go-memui
+```
+
+Then, import `go-memui` in your project:
+
 ```go
+import "github.com/KenanBek/go-memui"
+```
+
+Please note that when using `go-memui` in the source code, Go will drop the `go-` part and let you use only `memui`. See the example below.
+
+#### Example:
+
+```go
+package main
+
+import (
+	"fmt"
+	"log"
+
+	"github.com/KenanBek/go-memui"
+)
+
+...
+
 func main() {
 	fmt.Println("Hello, World!")
 
@@ -36,3 +65,5 @@ func main() {
 	log.Fatalln(mui.ServerHTTP())
 }
 ```
+
+See the `testapp` folder for detailed examples.
